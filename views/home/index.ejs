@@ -1,6 +1,7 @@
 
 <div id="header" class="p-center" style="display:none;">
   <h1>Hi, I'm <a id="personal-name">Kevin Kao</a>!</h1>
+  <h6>Software Engineer. UC Berkeley '16. Thinker. Designer.</h6>
 </div>
 
 <nav class="navbar navbar-default transparent" role="navigation">
@@ -127,9 +128,11 @@ function addProject(name, startDate, endDate, description) {
 function displayResearch() {
   var text = "";
   text += "<div id='research' style='display:none;'>";
+  text += "<h2>Publications</h2>";
+  text += "<p>[1] Zachary Pardos, Kevin Kao, Mangpo Phothilimthana. “moocRP: An Open-Source Analytics Platform”. October 2014. LAK 2015. - [PENDING]</p>"
   text += "<h2>Research</h2>";
   text += "<p>My research involves working with large data dumps, organizing and parsing through the JSON/XML data to generate clean, queryable data and then provide a platform for which analytics and visualizations on these datasets can be shared.</p>";
-  text += "<p>The major project that I've been working on is <b>moocRP</b> (link coming soon).</p>";
+  text += "<p>The major project that I've been working on is <b>moocRP</b>. The Github repository can be found <a href='http://www.github.com/kk415kk/moocrp.git' target='_blank'>here</a>.</p>";
   text += "<p>I'm developing a full-scale web application to solve a widely unsolved problem of having a common platform to share data analytics among researchers with ease and efficiency. My project is guided by <a href='http://www.ischool.berkeley.edu/people/faculty/zacharypardos'>Professor Zachary Pardos</a>, joint professor of the Graduate School of Information and the Graduate School of Education at UC Berkeley. I also collaborated with several other groups and individuals, such as UC Berkeley D-Lab, MOOCLab, CAS and Calnet team, and researchers at other institutions. Essentially, one of the problems I'm tackling is the 'reproducible research' problem.</p>";
   text += "<p>Some of my accomplishments include:</p>";
   text += "<ul>" +
@@ -138,37 +141,22 @@ function displayResearch() {
           "</ul>";
   text += "<p>Current features of my web platform include secure dataset downloads by a user permissions system, SSL, and CSRF-protection as well as data visualizations through D3.js and CAS authentication. Future goals include contributing to a C++ wrapper around Matlab for machine learning on datasets, possibly porting the code to Julia for distributed computing.</p>";
   text += "<div class='owl-carousel'>";
-  text += "<div class='item'><h4>1</h4></div>";
-  text += "<div class='item'><h4>2</h4></div>";
-  text += "<div class='item'><h4>3</h4></div>";
-  text += "<div class='item'><h4>4</h4></div>";
-  text += "<div class='item'><h4>5</h4></div>";
-  text += "<div class='item'><h4>6</h4></div>";
-  text += "<div class='item'><h4>7</h4></div>";
-  text += "<div class='item'><h4>8</h4></div>";
-  text += "<div class='item'><h4>9</h4></div>";
+  text += "<div class='item'><a rel='prettyPhoto' href='/images/moocrp_1.png' target='_blank'><img src='/images/moocrp_1.png' height=220></a></div>";
+  text += "<div class='item'><a rel='prettyPhoto' href='/images/moocrp_3.png' target='_blank'><img src='/images/moocrp_3.png' height=220></a></div>";
+  text += "<div class='item'><a rel='prettyPhoto' href='/images/moocrp_2.png' target='_blank'><img src='/images/moocrp_2.png' height=220></a></div>";
+  text += "<div class='item'><a rel='prettyPhoto' href='/images/moocrp_4.png' target='_blank'><img src='/images/moocrp_4.png' height=220></a></div>";
   text += "</div>";
-
-  text += "<h3>Publications</h3>";
-  text += "<p>[1] Zachary Pardos, Kevin Kao, Mangpo Phothilimthana. “moocRP: An Open-Source Analytics Platform”. October 2014. LAK 2015. - [PENDING]</p>"
   text += "</div>";
   $('#body-content').html(text);
   $('#research').fadeIn();
+  $("a[rel^='prettyPhoto']").prettyPhoto();
   $(".owl-carousel").owlCarousel({
     loop:true,
     margin:10,
     nav:true,
-    responsive:{
-      0:{
-        items:1
-      },
-      600:{
-        items:3
-      },
-      1000:{
-        items:5
-      }
-    }
+    items: 2,
+    itemsDesktop : [1199,2],
+    itemsDesktopSmall : [979,2]
   });
 }
 </script>
