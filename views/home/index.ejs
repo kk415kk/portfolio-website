@@ -1,0 +1,174 @@
+
+<div id="header" class="p-center" style="display:none;">
+  <h1>Hi, I'm <a id="personal-name">Kevin Kao</a>!</h1>
+</div>
+
+<nav class="navbar navbar-default transparent" role="navigation">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a id="nav-about">About</a></li>
+        <li><a id="nav-experience">Experience</a></li>
+        <li><a id="nav-projects">Projects</a></li>
+        <li><a id="nav-research">Research</a></li>
+        <li><a id="nav-contact" data-toggle="modal" href="#contactModal">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav pull-right">
+        <li><a href="/files/resume.pdf" target="_blank">Resume</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div id="body-content">
+</div>
+
+
+<!-- Contact Modal -->
+<div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h3 class="modal-title" id="contactLabel"><b>Contact Kevin</b></h3>
+      </div>
+
+      <div class="modal-body">
+        <p>This is under construction. In the meantime, please email me at <a>kkao[at]berkeley.edu</a> to contact me.</p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a type="submit" class="btn btn-primary" value="Send" href="#">Send</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$(document).ready(function () {
+  // Animate body content
+  $('#header').fadeIn();
+  displayAboutMe();
+
+  // Navigation click handlers
+  $('#personal-name').click(displayAboutMe);
+  $('#nav-about').click(displayAboutMe);
+  $('#nav-experience').click(displayExperience);
+  $('#nav-projects').click(displayProjects);
+  $('#nav-research').click(displayResearch);
+
+  // Effects
+});
+
+function displayAboutMe() {
+  var text = "";
+  text += "<div id='about-me' style='display:none;''>";
+  text += "<h2>About Me</h2>"
+  text += "<p>I'm an undergraduate EECS major at University of California, Berkeley. I love diving into thought-provoking and challenging projects - I've tackled several on my own and in teams. Some of my major interests include algorithms development and optimization, data analytics and machine learning, genomics, security, and general software/web development.</p>";
+  text += "<p>Outside of work, I love indulging in music and the great outdoors. I'm a big fan of dogs (most animals, really), especially Siberian huskies. I've recently started dabbling in aquariums - not just betta fish but mystery snails and ghost shrimp too. Keeping up with the <a href='www.nytimes.com'>news</a> is a must for me.</p>"
+  text += "</div>";
+  $('#body-content').html(text);
+  $('#about-me').fadeIn();
+}
+
+function displayExperience() {
+  var text = "";
+  text += "<div id='experience' style='display:none;'>";
+  text += "<h2>Experience</h2>";
+  text += "<p>I have a strong background in software and web development, with several projects spanning from full-scale Node.js web applications to analytical data simulations.</p>";
+  text += "</div>";
+  $('#body-content').html(text);
+  $('#experience').fadeIn();
+}
+
+function displayProjects() {
+  var text = "";
+  text += "<div id='projects' style='display:none;'>";
+  text += "<h2>Projects</h2>";
+
+  text += "<hr>";
+  text += "<h4>scribble.ly</h4>";
+  text += "<p>A single-page application that served as an URL shortener.</p>";
+
+  text += "<hr>";
+  text += "<h4>Brain Imaging Analytics</h4>";
+  text += "<p>TBD</p>";
+
+  text += "<hr>";
+  text += "<h4>Node.js CAS Authentication Module</h4>";
+  text += "<p>TBD</p>";
+
+  text += "<hr>";
+  text += "<h4>SimpleDB Relational Database</h4>";
+  text += "<p>TBD</p>";
+
+  text += "<hr>";
+  text += "<h4>Web & Linux Security Penetration Testing</h4>";
+  text += "<p>TBD</p>";
+
+  text += "<hr>";
+  text += "<h4>Pacman</h4>";
+  text += "<p>TBD</p>";
+
+  text += "</div>";
+  $('#body-content').html(text);
+  $('#projects').fadeIn();
+}
+
+function addProject(name, startDate, endDate, description) {
+  var text = "";
+  text += "<h5>" + name + "</h5>";
+  text += "<p>" + description + "</p>";
+  return text;
+}
+
+
+function displayResearch() {
+  var text = "";
+  text += "<div id='research' style='display:none;'>";
+  text += "<h2>Research</h2>";
+  text += "<p>My research involves working with large data dumps, organizing and parsing through the JSON/XML data to generate clean, queryable data and then provide a platform for which analytics and visualizations on these datasets can be shared.</p>";
+  text += "<p>The major project that I've been working on is <b>moocRP</b> (link coming soon).</p>";
+  text += "<p>I'm developing a full-scale web application to solve a widely unsolved problem of having a common platform to share data analytics among researchers with ease and efficiency. My project is guided by <a href='http://www.ischool.berkeley.edu/people/faculty/zacharypardos'>Professor Zachary Pardos</a>, joint professor of the Graduate School of Information and the Graduate School of Education at UC Berkeley. I also collaborated with several other groups and individuals, such as UC Berkeley D-Lab, MOOCLab, CAS and Calnet team, and researchers at other institutions. Essentially, one of the problems I'm tackling is the 'reproducible research' problem.</p>";
+  text += "<p>Some of my accomplishments include:</p>";
+  text += "<ul>" +
+          "<li>Developed first set of open-source Python and UNIX scripts to allow researchers to fully utilize Stanford and Harvard data scrubbing scripts without spinning up OpenEdX instances or asking for proprietary code</li>" +
+          "<li>Fully designed and developed a research platform to share data visualizations and analytics</li>" +
+          "</ul>";
+  text += "<p>Current features of my web platform include secure dataset downloads by a user permissions system, SSL, and CSRF-protection as well as data visualizations through D3.js and CAS authentication. Future goals include contributing to a C++ wrapper around Matlab for machine learning on datasets, possibly porting the code to Julia for distributed computing.</p>";
+  text += "<div class='owl-carousel'>";
+  text += "<div class='item'><h4>1</h4></div>";
+  text += "<div class='item'><h4>2</h4></div>";
+  text += "<div class='item'><h4>3</h4></div>";
+  text += "<div class='item'><h4>4</h4></div>";
+  text += "<div class='item'><h4>5</h4></div>";
+  text += "<div class='item'><h4>6</h4></div>";
+  text += "<div class='item'><h4>7</h4></div>";
+  text += "<div class='item'><h4>8</h4></div>";
+  text += "<div class='item'><h4>9</h4></div>";
+  text += "</div>";
+
+  text += "<h3>Publications</h3>";
+  text += "<p>[1] Zachary Pardos, Kevin Kao, Mangpo Phothilimthana. “moocRP: An Open-Source Analytics Platform”. October 2014. LAK 2015. - [PENDING]</p>"
+  text += "</div>";
+  $('#body-content').html(text);
+  $('#research').fadeIn();
+  $(".owl-carousel").owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+      0:{
+        items:1
+      },
+      600:{
+        items:3
+      },
+      1000:{
+        items:5
+      }
+    }
+  });
+}
+</script>

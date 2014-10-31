@@ -1,0 +1,128 @@
+<div id="flash-messages" class="alert alert-danger" style="display:none;">
+</div>
+
+<form id="login-form" method="POST" class="center" onsubmit="return false;">
+  <h2 class="d-center">Login</h2>
+  <div class="form-group">
+    <label for="login-username">Username: </label>
+    <input id="login-username" name="username" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+      <label for="login-password">Password: </label>
+      <input id="login-password" name="password" type="password" class="form-control">
+  </div>
+  <input type="submit" class="btn btn-success btn-lg d-center" value="Login" disabled>
+</form>
+
+<br>
+
+<div class="d-center">
+Haven't registered yet? Register <a data-toggle="modal" href="#registerModal">here</a>.
+</div>
+
+<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h3 class="modal-title" id="registerLabel"><b>Register</b></h3>
+      </div>
+
+      <div class="modal-body">
+        <div id="register-flash-messages" class="alert alert-danger" style="display:none;">
+        </div>
+        <form method="POST" id="registration-form" onsubmit="return false;">
+          <div class="form-group">
+            <label for="register-username">Username: </label>
+            <input id="register-username" name="username" type="text" class="form-control">
+          </div>
+          <div class="form-group">
+              <label for="register-password">Password: </label>
+              <input id="register-password" name="password" type="password" class="form-control">
+          </div>
+          <div class="form-group">
+              <label for="register-email">Email: </label>
+              <input id="register-email" name="email" type="email" class="form-control">
+          </div>   
+        </form>
+      </div>
+
+      <div class="modal-footer">
+        <button id="register-close" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <a id="register-submit" class="btn btn-primary" disabled>Register</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Validate registration form -->
+<script>
+  $("#registration-form input[name='username']").bind('input propertychange', validateRegister);
+  $("#registration-form input[name='password']").bind('input propertychange', validateRegister);
+  $("#registration-form input[name='email']").bind('input propertychange', validateRegister);
+
+  function validateRegister() {
+    var hasUser = !($("#registration-form input[name='username']").val() == '')
+    var hasPass = !($("#registration-form input[name='password']").val() == '');
+    var hasEmail = !($("#registration-form input[name='email']").val() == '');
+    var isEmail = $("#registration-form input[name='email']").val().indexOf('@') > -1;
+    if (hasUser && hasPass && hasEmail && isEmail) {
+      $("#register-submit").removeAttr('disabled');
+    } else {
+      $("#register-submit").attr('disabled', 'disabled');
+    }
+  }
+
+  $('#register-submit').click(function(event) {
+    event.preventDefault();
+    var values = $('#registration-form').serializeArray();
+    var username = values[0]["value"];
+    var password = values[1]["value"];
+    var email = values[2]["value"];
+    var params = { username: username, password: password, email: email };
+    $.post('/user/create', params, function(data) {
+      if (data['success']) {
+        $('#register-close').click();
+        var url = 'http://' + window.location.host + '/user/manage';
+        $(location).attr('href', url);
+      } else {
+        $('#register-flash-messages').hide();
+        $('#register-flash-messages').html('Please fill in all fields correctly.');
+        $('#register-flash-messages').fadeIn();
+      }
+    });
+  });
+</script>
+
+<!-- Validate login form -->
+<script>
+  $("#login-form input[name='username']").bind('input propertychange', validateLogin);
+  $("#login-form input[name='password']").bind('input propertychange', validateLogin);
+
+  function validateLogin() {
+    var hasUser = !($("#login-form input[name='username']").val() == '');
+    var hasPass = !($("#login-form input[name='password']").val() == '');
+    if (hasUser && hasPass) {
+      $("#login-form input[type='submit'").removeAttr('disabled');
+    } else {
+      $("#login-form input[type='submit'").attr('disabled', 'disabled');
+    }
+  }
+
+  $('#login-form').submit(function(event) {
+    event.preventDefault();
+    var values = $(this).serializeArray();
+    var username = values[0]["value"];
+    var password = values[1]["value"];
+    $.post('/user/validate', { username: username, password: password }, function(data) {
+      if (data['success']) {
+        var url = 'http://' + window.location.host + '/user/manage';
+        $(location).attr('href', url);
+      } else {
+        $('#flash-messages').hide();
+        $('#flash-messages').html('Unable to login - please try again.');
+        $('#flash-messages').fadeIn();
+      }
+    });
+  });
+</script>

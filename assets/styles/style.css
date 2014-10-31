@@ -1,0 +1,105 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: #42bdc2;
+  color: white;
+}
+
+h1 {
+  font-family: 'Montserrat', 'Raleway', 'Ubuntu', sans-serif;
+}
+
+h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', 'Ubuntu', sans-serif;;
+}
+
+#main {
+  margin-bottom: 100px;
+}
+
+/* Center horizontally regardless of parent div */
+.p-center {
+  bottom: 0; left: 0; top: 0; right: 0;
+  margin: auto auto auto auto;
+  width: 500px;
+  text-align: center;
+}
+
+/* Center horizontally within parent div*/
+.d-center {
+  display: table;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Transparency for the background */
+.transparent {
+  opacity: 0.7;
+  filter: alpha(opacity=70); /* For IE8 and earlier */
+}
+
+.push-down-sm {
+  margin-top: 25px;
+}
+.push-down-md {
+  margin-top: 50px;
+}
+.push-down-la {
+  margin-top: 100px;
+}
+
+/* Navbar */
+.navbar.center .navbar-inner {
+    text-align: center;
+}
+
+.navbar.center .navbar-inner .nav {
+    display:inline-block;
+    float: none;
+}
+
+ul.nav li a {
+  cursor: pointer;
+}
+
+ul.nav li:hover {
+  border-bottom: 2px solid #00a200;
+  margin-bottom: -2px;
+}
+
+/* Modals */
+.modal {
+  color: #42bdc2;
+}
+
+.modal p {
+  color: black;
+}
+
+/* Header */
+a#personal-name {
+  color: #5eb95e;
+  font-size: 45px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 5px;
+
+  opacity: 0.85;
+  filter: alpha(opacity=85); /* For IE8 and earlier */
+  transition: all 0.5s ease;
+}
+
+a#personal-name:hover {
+  opacity: 1.0;
+  filter: alpha(opacity=100); /* For IE8 and earlier */
+  text-decoration: none;
+}
+
+/* Buttons */
+
+/* Forms */
+.input-group-addon label {
+  margin: 0;
+}
