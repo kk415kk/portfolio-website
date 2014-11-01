@@ -66,9 +66,18 @@ ul.nav li:hover {
   margin-bottom: -2px;
 }
 
+nav .active {
+  border-bottom: 2px solid #00a200;
+  margin-bottom: -2px;
+}
+
+nav .active a {
+  font-weight: bold;
+}
+
 /* Modals */
 .modal {
-  color: #42bdc2;
+  color: #5cb85c;
 }
 
 .modal p {
@@ -103,3 +112,44 @@ a#personal-name:hover {
 .input-group-addon label {
   margin: 0;
 }
+
+form, form label, form input {
+  color: black;
+}
+
+/* OWL Carousel */
+.owl-prev, .owl-next {
+  background: #5eb95e;
+}
+
+/* Icons */
+.push-right {
+  margin-right: 10px;
+}
+
+.no-block {
+  display: inline;
+}
+
+.no-href {
+  cursor: pointer;
+}
+
+div.indent {
+  margin-left: 35px;
+}
+
+img.logo {
+  height: 50px;
+  padding: 5px;
+  background-color: white;
+  border: 1px solid #;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+}
+
+#live-search label, #filter-count {
+  color: white;
+}
+
