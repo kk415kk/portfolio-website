@@ -98,12 +98,6 @@ $(document).ready(function () {
   $('#nav-projects').click(displayProjects);
   $('#nav-research').click(displayResearch);
 
-  // In progress
-  window.onhashchange = function(){
-    var hash = document.location.hash;    
-    if (hash == "#research") displayResearch();
-  }
-
   // Effects
 });
 
@@ -348,6 +342,7 @@ function displayResearch() {
   text += "<h2><i class='fa fa-area-chart push-right' style='font-size:30px;'></i>Research</h2>";
   text += "<h3>Fully Dynamic SCC Maintenance</h3>";
   text += "<p>As part of my work for LogicBlox, a smart database startup, I'm researching the implementation of a fully dynamic maintenance algorithm for strongly connected components of a graph under edge additions and deletions. Rather than statically recompute the SCCs of a graph after every small change, I'm aiming for an optimized, cutting-edge algorithm based off academic work in relevant areas, such as strong connectivity, point analysis, etc.</p>";
+  text += "<p>See my work on <a href='http://www.github.com/kk415kk/dynamic-scc-algorithm' target='_blank'>Github</a>.</p>"
   text += "<h3>MOOC Analytics - Data Driven Education</h3>"
   text += "<p>My research involves working with large data dumps, organizing and parsing through the JSON/XML data to generate clean, queryable data and then provide a platform for which analytics and visualizations on these datasets can be shared.</p>";
   text += "<p>The major project that I've been working on is <b>moocRP</b>. The Github repository can be found <a href='http://www.github.com/kk415kk/moocrp.git' target='_blank'>here</a>.</p>";
@@ -367,7 +362,6 @@ function displayResearch() {
   text += "</div>";
 
   setActiveNav('research');
-  window.location.hash = 'research';
   $('#body-content').html(text);
   $('#research').fadeIn();
   document.title = 'Kevin Kao - Research';
