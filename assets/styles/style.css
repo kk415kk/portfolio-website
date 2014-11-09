@@ -114,6 +114,19 @@ a#personal-name:hover {
   text-decoration: none;
 }
 
+.highlight-white {
+  padding: 10px 30px;
+  border-radius: 10px;
+  border: 5px transparent solid;
+}
+
+.highlight-green {
+  padding: 10px 30px;
+  background-color: #5eb95e;
+  border-radius: 10px;
+  border: 5px white solid;
+}
+
 /* Buttons */
 
 /* Forms */

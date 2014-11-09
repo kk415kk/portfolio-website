@@ -151,41 +151,56 @@ function displayExperience() {
   text += "<div id='experience' style='display:none;'>";
   text += "<h2><i class='fa fa-pencil push-right' style='font-size:30px;'></i>Experience</h2>";
   text += "<p>I have a strong background in software and web development, with several projects spanning from full-scale Node.js web applications to analytical data simulations.</p>";
+
+  text += "<div id='tech-skills' class='highlight-white'>"
   text += "<h3>Technical Skills</h3>";
-  text += "<p>I develop primarily in UNIX, with stronger skills in Python and Java. I feel very comfortable using JavaScript and SQL, as well as HTML/CSS during web development.</p>";
+  text += "<hr>";
+  text += "<p>I develop primarily in an UNIX environment, with a strong grasp of Python and Java as my go-to languages. I feel very comfortable using JavaScript and SQL, as well as HTML/CSS during web development.</p>";
   text += "<p>My proficiency in various technologies varies from time to time depending on what I'm working on, but in general, I'm a strong learner, so I can pick up (or remind myself of) technologies relatively easily. I've had past experience with all of the following:</p>";
-  text += "<p><b>Programming Languages:</b> Java, Python, JavaScript, Ruby, SQL, R, C, C++, Bash, Datalog</p>"
+  text += "<p><b>Programming Languages:</b> Java, Python, JavaScript, Ruby, SQL, C, C++, Bash, Scala, Datalog</p>"
   text += "<p><b>Databases:</b> MySQL, Redis, HBase</p>";
   text += "<p><b>Frameworks/Tools:</b> Git, Mercurial, Node.js, Sails.js, Flask, Rails, Hadoop, D3.js</p>";
-  text += "<p><b>Data Analytics:</b> R, Pandas, MapReduce, Scala, Matlab, Spark, Caffe, UNIX command line (grep, find, cut, etc)</p>";
+  text += "<p><b>Data Analytics:</b> R, Pandas, MapReduce, Matlab, Spark, Caffe, UNIX command line (grep, find, cut, etc)</p>";
+  text += "</div>"
 
 
   text += "<h3>Industry Experience</h3>";
-  text += "<div class='indent'>"
+  text += "<div class='row'>";
+  text += "<div class='col-md-4'>"
   text += "<h4>LogicBlox, Inc</h4>";
   text += "<h6>September 2014 - Present</h6>";
   text += "<h5>Database Engineering Intern</h5>";
   text += "<p></p>";
-  text += "<br>"
+  text += "<br>";
+  text += "</div>"
 
+  text += "<div class='col-md-4'>"
   text += "<h4>AutoGrid Systems</h4>";
   text += "<h6>May 2014 - August 2014</h6>";
   text += "<h5>Software Engineering Intern</h5>";
   text += "<p></p>";
   text += "<br>"
+  text += "</div>"
 
+  text += "<div class='col-md-4'>"
   text += "<h4>Microsoft</h4>";
   text += "<h6>December 2012 - January 2013</h6>";
   text += "<h5>SDET Extern</h5>";
   text += "<p></p>";
-  text += "<br>"  
+  text += "<br>"
+  text += "</div>"
   text += "</div>";
-  text += "<br>";
+
   text += "</div>";
   setActiveNav('experience');
   $('#body-content').html(text);
   $('#experience').fadeIn();
   document.title = 'Kevin Kao - Experience';
+
+  setTimeout(function() {
+    $('#tech-skills').addClass('highlight-green', 500, 'swing')
+  }, 300);
+
   $('.fa-pencil').on('mouseover', function() {
     $('.fa-pencil').rotate({ animateTo: -60 });
   });
