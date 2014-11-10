@@ -114,19 +114,6 @@ a#personal-name:hover {
   text-decoration: none;
 }
 
-.highlight-white {
-  padding: 10px 30px;
-  border-radius: 10px;
-  border: 5px transparent solid;
-}
-
-.highlight-green {
-  padding: 10px 30px;
-  background-color: #5eb95e;
-  border-radius: 10px;
-  border: 5px white solid;
-}
-
 /* Buttons */
 
 /* Forms */
@@ -144,7 +131,7 @@ form, form label, form input {
 }
 
 .item-wrap {
-  padding: 10px;
+  padding: 5px;
   background-color: white;
   -webkit-border-radius: 5px;
   -moz-border-radius: 5px;
@@ -186,7 +173,34 @@ img.logo {
   border-radius: 2px;
 }
 
+/* Miscellaneous */
 #live-search label, #filter-count {
   color: white;
+}
+
+.highlight-white {
+  padding: 10px 30px;
+  border-radius: 10px;
+  border: 5px transparent solid;
+}
+
+.highlight-green {
+  padding: 10px 30px;
+  background-color: #5eb95e;
+  border-radius: 10px;
+  border: 5px white solid;
+}
+
+.grid-item {
+  padding: 10px;
+  padding-left: 20px;
+  margin-bottom: 5px;
+  background-color: teal;
+  border-radius: 5px;
+}
+
+#hidden,
+.hidden {
+  display: none;
 }
 
