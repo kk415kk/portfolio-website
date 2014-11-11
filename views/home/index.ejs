@@ -155,7 +155,7 @@ function displayExperience() {
   text += "<h2><i class='fa fa-pencil push-right' style='font-size:30px;'></i>Experience</h2>";
   text += "<p>I have a strong background in software and web development, with several projects spanning from full-scale Node.js web applications to analytical data simulations.</p>";
 
-  text += "<div id='tech-skills' class='highlight-white'>"
+  text += "<div id='tech-skills' class='highlight-green'>"
   text += "<h3 id='tech-skills-header'>Technical Skills</h3>";
   text += "<p>I develop primarily in an UNIX environment, with a strong grasp of Python and Java as my go-to languages. I feel very comfortable using JavaScript and SQL, as well as HTML/CSS during web development.</p>";
   text += "<p>My proficiency in various technologies varies from time to time depending on what I'm working on, but in general, I'm a strong learner, so I can pick up (or remind myself of) technologies relatively easily. I've had past experience with all of the following:</p>";
@@ -168,14 +168,14 @@ function displayExperience() {
 
   text += "<h3>Industry Experience</h3>";
   text += "<div class='row'>";
-  // text += "   <div class='col-md-4'>";
-  // text += "     <div class='grid-item'>";
-  // text += "     <h4>LinkedIn</h4>";
-  // text += "     <h6>Summer 2015</h6>";
-  // text += "     <h5>Software Engineering Intern</h5>";
-  // text += "     <p></p>";
-  // text += "     </div>";
-  // text += "   </div>"
+  text += "   <div class='col-md-4'>";
+  text += "     <div class='grid-item'>";
+  text += "     <h4>LinkedIn</h4>";
+  text += "     <h6>Summer 2015</h6>";
+  text += "     <h5>Software Engineering Intern</h5>";
+  text += "     <p></p>";
+  text += "     </div>";
+  text += "   </div>"
 
   text += "   <div class='col-md-4'>"
   text += "     <div class='grid-item'>";
@@ -221,8 +221,8 @@ function displayExperience() {
   document.title = 'Kevin Kao - Experience';
 
   setTimeout(function() {
-    $('#tech-skills').addClass('highlight-green', 500, 'swing');
-    $('<hr>').hide().appendTo('#tech-skills-header').fadeIn(1200);
+    $('#tech-skills').addClass('highlight-green', 100, 'swing');
+    $('<hr>').hide().appendTo('#tech-skills-header').fadeIn(500);
   }, 300);
 
   $('.fa-pencil').on('mouseover', function() {
@@ -238,28 +238,31 @@ function displayProjects() {
   text += "<div id='projects' style='display:none;'>";
   text += "<h2><i class='fa fa-code push-right' style='font-size:30px;'></i>Projects</h2>";
   text += "<p>Here is a sample list of projects I've worked on in the past or currently. To see my work-related projects, see <a class='no-href' onclick='displayExperience();'>Experience</a>. Some of my projects are hosted on my Github (see above) publicly - if you want to see a project of mine that isn't up, please <a data-toggle='modal' href='#contactModal'>contact me</a>.</p>"
-
   text += "<form id='live-search' action='' class='styled' method='post'>"
   text += "<fieldset>"
   text += "<label>Search: </label>";
   text += "<input type='text' class='form-control' id='filter' value='' />"
   text += "<span id='filter-count'></span>"
   text += "</fieldset>"
-  text += "</form> " 
+  text += "</form>"
+  text += "<br>";
+
+  text += "<div class='grid-item'>";
   text += "<div class='project'>";
-  text += "<hr>";
   text += "<h4>scribble.ly</h4>";
   text += "<p>A single-page application that served as an URL shortener.</p>";
   text += "</div>";
+  text += "</div>";
 
+  text += "<div class='grid-item'>";
   text += "<div class='project'>";
-  text += "<hr>";
   text += "<h4>Brain Imaging Analytics</h4>";
   text += "<p>TBD</p>";
   text += "</div>";
+  text += "</div>"
 
+  text += "<div class='grid-item'>";
   text += "<div class='project'>";
-  text += "<hr>";
   text += "<h4>Node.js CAS Authentication Module</h4>";
   text += "<h6>April 2014 - September 2014</h6>";
   text += "<p>";
@@ -267,9 +270,10 @@ function displayProjects() {
   text += "- Researched numerous CAS clients in Java, Perl, PHP, and Ruby in order to determine module necessities";
   text += "</p>";
   text += "</div>";
+  text += "</div>";
 
+  text += "<div class='grid-item'>";
   text += "<div class='project'>";
-  text += "<hr>";
   text += "<h4>SimpleDB Relational Database</h4>";
   text += "<h6>January 2014 - March 2014</h6>";
   text += "<p>";
@@ -281,9 +285,10 @@ function displayProjects() {
   text += "- Designed a query optimization algorithm based on dynamic programming that enumerated a close-to-optimal query plan";
   text += "</p>";
   text += "</div>";
+  text += "</div>";
 
+  text += "<div class='grid-item'>";
   text += "<div class='project'>";
-  text += "<hr>";
   text += "<h4>Web & Linux Security Penetration Testing</h4>";
   text += "<h6>March 2014 - April 2014</h6>";
   text += "<p>";
@@ -293,9 +298,10 @@ function displayProjects() {
   text += "- Scanned vulnerable C code, writing a Python and Ruby script to bruteforce RSA private key and spoof DNS packets to bypass SSL";
   text += "</p>";
   text += "</div>";
+  text += "</div>";
 
+  text += "<div class='grid-item'>";
   text += "<div class='project'>";
-  text += "<hr>";
   text += "<h4>Pacman</h4>";
   text += "<h6>February 2014 - May 2014</h6>";
   text += "<p>";
@@ -304,9 +310,10 @@ function displayProjects() {
   text += "- Optimized for space and memory by using Bayes’ Nets and feature weight representations to perform a search for optimal policy";
   text += "</p>";
   text += "</div>";
+  text += "</div>";
 
+  text += "<div class='grid-item'>";
   text += "<div class='project'>";
-  text += "<hr>";
   text += "<h4>Image Metadata Parser</h4>";
   text += "<h6>February 2014 - February 2014</h6>";
   text += "<p>";
@@ -316,9 +323,10 @@ function displayProjects() {
   text += "- Performed fuzz testing with several randomly generated JPG and PNG files to ensure security";
   text += "</p>";
   text += "</div>"
+  text += "</div>";
 
+  text += "<div class='grid-item'>";
   text += "<div class='project'>";
-  text += "<hr>";
   text += "<h4>Image Filter</h4>";
   text += "<h6>November 2013 - November 2013</h6>";
   text += "<p>";
@@ -328,9 +336,10 @@ function displayProjects() {
   text += "- Exploited knowledge of Intel SSE intrinsics instructions and various compiler tricks to optimize program speed";
   text += "</p>";
   text += "</div>";
+  text += "</div>";
 
+  text += "<div class='grid-item'>";
   text += "<div class='project'>";
-  text += "<hr>";
   text += "<h4>Text Analysis - MapReduce</h4>";
   text += "<h6>September 2013 - September 2013</h6>";
   text += "<p>";
@@ -338,7 +347,8 @@ function displayProjects() {
   text += "- Implemented efficient MapReduce algorithm through efficient selection and usage of data structures (Set, Hashtable, ArrayList) <br>";
   text += "- Benchmarked a speed of 51 seconds, less than half the time within the required two minutes (200% speedup)";
   text += "</p>";
-  text += "</div>"
+  text += "</div>";
+  text += "</div>";
 
   text += "</div>";
   setActiveNav('projects');
