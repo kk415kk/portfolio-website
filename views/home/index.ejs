@@ -12,6 +12,7 @@
         <li><a id="nav-experience">Experience</a></li>
         <li><a id="nav-projects">Projects</a></li>
         <li><a id="nav-research">Research</a></li>
+        <li><a id="nav-blog">Blog</a></li>
         <li><a id="nav-contact" data-toggle="modal" href="#contactModal">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav pull-right">
@@ -112,8 +113,8 @@ function displayAboutMe() {
   text += "<div class='highlight-green'>";
   text += "<h2><i class='fa fa-rocket push-right' style='font-size:30px;'></i>About Me</h2>"
   text += "<hr>";
-  text += "<p>I'm an undergraduate EECS major at University of California, Berkeley. I was born in San Jose, CA and spent most of my life in the Bay Area. Upon starting college, I've learned to truly appreciate the little quircks of CS theory and began my deep dive into computer science. I love tackling thought-provoking and challenging projects - I've worked on several on my own and in teams. I've found my intersts piqued by certain CS niches, including algorithms development and optimization, data analytics and machine learning, genomics, and security.</p>";
-  text += "<p>Outside of work, I love indulging in and playing music (violin, piano, and guitar), as well as spending time in the great outdoors. I've played soccer for over 14 years, since I was 5, and I find running, biking, and volleyball to be enjoyable pastimes. I'm a huge fan of dogs (most animals, really), especially Siberian huskies. Recently, I've started dabbling in aquariums - not just fish but other aquatic creatures too. Keeping up with <a href='http://www.nytimes.com' target='_blank'>the cogs of the world</a> is a must for me, as well as <a href='#'>exploring its nooks and crannies</a>.</p>"
+  text += "<p>I'm a third year undergraduate EECS major at University of California, Berkeley. I was born in San Jose, CA and spent most of my life in the Silicon Valley. Upon starting college, I've learned to truly appreciate the little quircks of CS theory and began my deep dive into computer science. I love tackling thought-provoking and challenging projects - I've worked on several on my own and in teams. I've found my intersts piqued by certain CS niches, including algorithms development and optimization, data analytics and machine learning, genomics, and security.</p>";
+  text += "<p>Outside of work, I love indulging in and playing music (violin, piano, and guitar), as well as spending time in the great outdoors. I've played soccer for over 14 years, since I was 5, and I find running, biking, and volleyball to be enjoyable pastimes. I'm a huge fan of dogs (most animals, really), especially Siberian huskies. Recently, I've started dabbling in aquariums - not just fish but other aquatic creatures too. Keeping up with <a href='http://www.nytimes.com' target='_blank'>the cogs of the world</a> is a must for me, as well as exploring its nooks and crannies.</p>"
   text += "</div>"
 
   text += "<h4>Life in Pictures:</h4>";
@@ -157,6 +158,7 @@ function displayExperience() {
 
   text += "<div id='tech-skills' class='highlight-green'>"
   text += "<h3 id='tech-skills-header'>Technical Skills</h3>";
+  text += "<hr>";
   text += "<p>I develop primarily in an UNIX environment, with a strong grasp of Python and Java as my go-to languages. I feel very comfortable using JavaScript and SQL, as well as HTML/CSS during web development.</p>";
   text += "<p>My proficiency in various technologies varies from time to time depending on what I'm working on, but in general, I'm a strong learner, so I can pick up (or remind myself of) technologies relatively easily. I've had past experience with all of the following:</p>";
   text += "<p><b>Programming Languages:</b> Java, Python, JavaScript, Ruby, SQL, C, C++, Bash, Scala, Datalog</p>"
@@ -188,12 +190,21 @@ function displayExperience() {
 
   text += "   <div class='col-md-4'>"
   text += "     <div class='grid-item'>";
+  text += "     <h4>UC Berkeley</h4>";
+  text += "     <h6>February 2014 - Present</h6>";
+  text += "     <h5>Full Stack Research Intern</h5>";
+  text += "     <p></p>";
+  text += "     </div>";
+  text += "   </div>";
+
+  text += "   <div class='col-md-4'>"
+  text += "     <div class='grid-item'>";
   text += "     <h4>AutoGrid Systems</h4>";
   text += "     <h6>May 2014 - August 2014</h6>";
   text += "     <h5>Software Engineering Intern</h5>";
   text += "     <p></p>";
   text += "     </div>";
-  text += "   </div>"
+  text += "   </div>";
 
   text += "   <div class='col-md-4'>"
   text += "     <div class='grid-item'>";
@@ -220,11 +231,6 @@ function displayExperience() {
   $('#experience').fadeIn();
   document.title = 'Kevin Kao - Experience';
 
-  setTimeout(function() {
-    $('#tech-skills').addClass('highlight-green', 100, 'swing');
-    $('<hr>').hide().appendTo('#tech-skills-header').fadeIn(500);
-  }, 300);
-
   $('.fa-pencil').on('mouseover', function() {
     $('.fa-pencil').rotate({ animateTo: -60 });
   });
@@ -237,7 +243,7 @@ function displayProjects() {
   var text = "";
   text += "<div id='projects' style='display:none;'>";
   text += "<h2><i class='fa fa-code push-right' style='font-size:30px;'></i>Projects</h2>";
-  text += "<p>Here is a sample list of projects I've worked on in the past or currently. To see my work-related projects, see <a class='no-href' onclick='displayExperience();'>Experience</a>. Some of my projects are hosted on my Github (see above) publicly - if you want to see a project of mine that isn't up, please <a data-toggle='modal' href='#contactModal'>contact me</a>.</p>"
+  text += "<p>Here is a sample list of projects I've worked on in the past or currently. To see my work-related projects, see <a class='no-href' onclick='displayExperience();'>Experience</a>. Some of my projects are hosted on my Github (see above) publicly - if you want to see a project of mine that isn't up, please contact me.</p>"
   text += "<form id='live-search' action='' class='styled' method='post'>"
   text += "<fieldset>"
   text += "<label>Search: </label>";
@@ -387,12 +393,19 @@ function displayResearch() {
   text += "<div id='research' style='display:none;'>";
   text += "<h2><i class='fa fa-book push-right' style='font-size:30px;'></i>Publications</h2>";
   text += "<p>[1] Zachary Pardos, Kevin Kao, Mangpo Phothilimthana. “moocRP: An Open-Source Analytics Platform”. October 2014. LAK 2015. - [PENDING]</p>"
-  text += "<br>";
+
   text += "<h2><i class='fa fa-area-chart push-right' style='font-size:30px;'></i>Research</h2>";
-  text += "<h3>Fully Dynamic SCC Maintenance</h3>";
-  text += "<p>As part of my work for LogicBlox, a smart database startup, I'm researching the implementation of a fully dynamic maintenance algorithm for strongly connected components of a graph under edge additions and deletions. Rather than statically recompute the SCCs of a graph after every small change, I'm aiming for an optimized, cutting-edge algorithm based off academic work in relevant areas, such as strong connectivity, point analysis, etc.</p>";
-  text += "<p>See my work on <a href='http://www.github.com/kk415kk/dynamic-scc-algorithm' target='_blank'>Github</a>.</p>"
-  text += "<h3>MOOC Analytics - Data Driven Education</h3>"
+  text += "<h3>fMRI Vision Classification</h3>";
+  text += "<h5>October 2014 - Present</h5>"
+  text += "<p>Data science is a passion and interest of mine that I've only dabbled a little in in the past. To change that, I've begun working on classifying some BOLD response data (brain activation data) from the Gallant Labs to try to draw conclusions about what kind of image a subject is viewing based on his/her brain activity. Current progress has only been a lot of data exploration with various classification models, but I'm reading more papers on better feature extractions from the fMRI data to find something more concrete.</p>";
+
+  text += "<h3>Graph Theory Research: Fully Dynamic SCC Maintenance</h3>";
+  text += "<h5>September 2014 - Present</h5>"
+  text += "<p>As part of my work for LogicBlox, a smart database startup, I'm researching the implementation of a fully dynamic maintenance algorithm for strongly connected components of a graph under edge additions and deletions. Rather than statically recompute the SCCs of a graph after every small change, I'm aiming for an optimized, cutting-edge algorithm based off academic work in relevant areas, such as strong connectivity, point analysis, etc. There currently (as of the time of this writing) is no fully dynamic algorithm that can maintain strong components in sublinear time, but the goal is to combine the optimizations of subtle but similar problems and apply them to this open-ended problem.</p>";
+  text += "<p>See my work on <a href='http://www.github.com/kk415kk/dynamic-scc-algorithm' target='_blank'>Github</a>.</p>";
+
+  text += "<h3>MOOC Analytics: Data Driven Education</h3>"
+  text += "<h5>February 2014 - Present</h5>"
   text += "<p>My research involves working with large data dumps, organizing and parsing through the JSON/XML data to generate clean, queryable data and then provide a platform for which analytics and visualizations on these datasets can be shared.</p>";
   text += "<p>The major project that I've been working on is <b>moocRP</b>. The Github repository can be found <a href='http://www.github.com/kk415kk/moocrp.git' target='_blank'>here</a>.</p>";
   text += "<p>I'm developing a full-scale web application to solve a widely unsolved problem of having a common platform to share data analytics among researchers with ease and efficiency. My project is guided by <a href='http://www.ischool.berkeley.edu/people/faculty/zacharypardos'>Professor Zachary Pardos</a>, joint professor of the Graduate School of Information and the Graduate School of Education at UC Berkeley. I also collaborated with several other groups and individuals, such as UC Berkeley D-Lab, MOOCLab, CAS and Calnet team, and researchers at other institutions. Essentially, one of the problems I'm tackling is the 'reproducible research' problem.</p>";
@@ -403,10 +416,10 @@ function displayResearch() {
           "</ul>";
   text += "<p>Current features of my web platform include secure dataset downloads by a user permissions system, SSL, and CSRF-protection as well as data visualizations through D3.js and CAS authentication. Future goals include contributing to a C++ wrapper around Matlab for machine learning on datasets, possibly porting the code to Julia for distributed computing.</p>";
   text += "<div class='owl-carousel'>";
-  text += "<div class='item'><a rel='prettyPhoto' href='/images/moocrp_1.png' target='_blank'><img src='/images/moocrp_1.png' height=220></a></div>";
-  text += "<div class='item'><a rel='prettyPhoto' href='/images/moocrp_3.png' target='_blank'><img src='/images/moocrp_3.png' height=220></a></div>";
-  text += "<div class='item'><a rel='prettyPhoto' href='/images/moocrp_2.png' target='_blank'><img src='/images/moocrp_2.png' height=220></a></div>";
-  text += "<div class='item'><a rel='prettyPhoto' href='/images/moocrp_4.png' target='_blank'><img src='/images/moocrp_4.png' height=220></a></div>";
+  text += "<div class='item-wrap'><div class='item'><a rel='prettyPhoto' href='/images/moocrp_1.png' target='_blank'><img src='/images/moocrp_1.png' height=220></a></div></div>";
+  text += "<div class='item-wrap'><div class='item'><a rel='prettyPhoto' href='/images/moocrp_3.png' target='_blank'><img src='/images/moocrp_3.png' height=220></a></div></div>";
+  text += "<div class='item-wrap'><div class='item'><a rel='prettyPhoto' href='/images/moocrp_2.png' target='_blank'><img src='/images/moocrp_2.png' height=220></a></div></div>";
+  text += "<div class='item-wrap'><div class='item'><a rel='prettyPhoto' href='/images/moocrp_4.png' target='_blank'><img src='/images/moocrp_4.png' height=220></a></div></div>";
   text += "</div>";
   text += "</div>";
 

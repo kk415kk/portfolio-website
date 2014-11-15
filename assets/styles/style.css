@@ -126,8 +126,19 @@ form, form label, form input {
 }
 
 /* OWL Carousel */
+.owl-theme .owl-controls .owl-nav [class*=owl-],
+.owl-theme .owl-dots .owl-dot.active span,
 .owl-dot span, .owl-dot:hover span, .owl-prev, .owl-next {
   background-color: #5eb95e;
+}
+
+.owl-theme .owl-controls .owl-nav [class*=owl-]:hover,
+.owl-theme .owl-dots .owl-dot:hover span {
+  background-color: #71cf71;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+  background-color: white;
 }
 
 .item-wrap {
@@ -197,6 +208,12 @@ img.logo {
   margin-bottom: 5px;
   background-color: teal;
   border-radius: 5px;
+  transition: all 0.5s ease;
+}
+
+.grid-item:hover {
+  cursor: pointer;
+  background-color: #079191;
 }
 
 #hidden,
