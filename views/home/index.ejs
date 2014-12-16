@@ -170,6 +170,7 @@ function displayExperience() {
 
   text += "<h3>Industry Experience</h3>";
   text += "<div class='row'>";
+
   text += "   <div class='col-md-4'>";
   text += "     <div class='grid-item'>";
   text += "     <h4>LinkedIn</h4>";
@@ -393,16 +394,28 @@ function displayResearch() {
   text += "<div id='research' style='display:none;'>";
   text += "<h2><i class='fa fa-book push-right' style='font-size:30px;'></i>Publications</h2>";
   text += "<p>[1] Zachary Pardos, Kevin Kao. “moocRP: An Open-Source Learning Analytics Platform”. December 2014. LAS 2015.</p>"
+  text += "<p>[2] Kevin Kao, Ananth Sub., Valerie Liu. “Machine Learning with fMRI Brain Images.” December 2014. CS194-16 BIDS Poster Session.</p>"
 
   text += "<h2><i class='fa fa-area-chart push-right' style='font-size:30px;'></i>Research</h2>";
-  text += "<h3>fMRI Vision Classification</h3>";
-  text += "<h5>October 2014 - Present</h5>"
-  text += "<p>Data science is a passion and interest of mine that I've only dabbled a little in in the past. To change that, I've begun working on classifying some BOLD response data (brain activation data) from the Gallant Labs to try to draw conclusions about what kind of image a subject is viewing based on his/her brain activity. Current progress has only been a lot of data exploration with various classification models, but I'm reading more papers on better feature extractions from the fMRI data to find something more concrete.</p>";
 
-  text += "<h3>Graph Theory Research: Fully Dynamic SCC Maintenance</h3>";
-  text += "<h5>September 2014 - Present</h5>"
+  text += "<h3>Spectral Clustering on MOOC Learners</h3>";
+  text += "<h5>December 2014 - Present</h5>";
+  text += "<p>";
+  text += "TBD"
+  text += "</p>";
+
+  text += "<h3>Graph Theory: Fully Dynamic SCC Maintenance</h3>";
+  text += "<h5>September 2014 - January 2015</h5>"
   text += "<p>As part of my work for LogicBlox, a smart database startup, I'm researching the implementation of a fully dynamic maintenance algorithm for strongly connected components of a graph under edge additions and deletions. Rather than statically recompute the SCCs of a graph after every small change, I'm aiming for an optimized, cutting-edge algorithm based off academic work in relevant areas, such as strong connectivity, point analysis, etc. There currently (as of the time of this writing) is no fully dynamic algorithm that can maintain strong components in sublinear time, but the goal is to combine the optimizations of subtle but similar problems and apply them to this open-ended problem.</p>";
   text += "<p>See my work on <a href='http://www.github.com/kk415kk/dynamic-scc-algorithm' target='_blank'>Github</a>.</p>";
+
+  text += "<h3>fMRI Vision Classification</h3>";
+  text += "<h5>October 2014 - December 2014</h5>"
+  text += "<p>Data science is a passion and interest of mine that I've only dabbled a little in in the past. To change that, I've begun working on exploring some BOLD response data (brain activation data) from the Gallant Labs to try to draw conclusions about a subject's brain activity in various ROI based on a stimulus image that the subject is viewing. Data exploration, data wrangling, and feature extractions were all part of the process of developing a good model. My work has yielded significant results with the binary classification models of determining which ROI would be most activated based on various statistics extracted from a Gabor filter bank applied on the stimulus image.";
+  text += "<br><br>See my results below:";
+  text += "<br>- <a href='/files/machine_learning_fmri_poster.pdf' target='_blank'>BIDS Poster</a>"
+  text += "<br>- <a href='/files/machine_learning_fmri_report.pdf' target='_blank'>BIDS Report</a>"
+  text += "</p>";
 
   text += "<h3>MOOC Analytics: Data Driven Education</h3>"
   text += "<h5>February 2014 - Present</h5>"
