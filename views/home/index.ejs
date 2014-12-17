@@ -12,7 +12,6 @@
         <li><a id="nav-experience">Experience</a></li>
         <li><a id="nav-projects">Projects</a></li>
         <li><a id="nav-research">Research</a></li>
-        <li><a id="nav-blog">Blog</a></li>
         <li><a id="nav-contact" data-toggle="modal" href="#contactModal">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav pull-right">
@@ -55,10 +54,6 @@
           <div class='form-group'>
             <label for='lastName'>Last Name: </label>
             <input type='text' id='lastName' class='form-control' name='lastName'>
-          </div>
-          <div class='form-group'>
-            <label for='emailAddress'>Email Address: </label>
-            <input type='email' id='emailAddress' class='form-control' name='emailAddress'>
           </div>
           <div class='form-group'>
             <label for='emailAddress'>Email Address: </label>
@@ -116,13 +111,6 @@ function displayAboutMe() {
   text += "<p>I'm a third year undergraduate EECS major at University of California, Berkeley. I was born in San Jose, CA and spent most of my life in the Silicon Valley. Upon starting college, I've learned to truly appreciate the little quircks of CS theory and began my deep dive into computer science. I love tackling thought-provoking and challenging projects - I've worked on several on my own and in teams. I've found my intersts piqued by certain CS niches, including algorithms development and optimization, data analytics and machine learning, genomics, and security.</p>";
   text += "<p>Outside of work, I love indulging in and playing music (violin, piano, and guitar), as well as spending time in the great outdoors. I've played soccer for over 14 years, since I was 5, and I find running, biking, and volleyball to be enjoyable pastimes. I'm a huge fan of dogs (most animals, really), especially Siberian huskies. Recently, I've started dabbling in aquariums - not just fish but other aquatic creatures too. Keeping up with <a href='http://www.nytimes.com' target='_blank'>the cogs of the world</a> is a must for me, as well as exploring its nooks and crannies.</p>"
   text += "</div>"
-
-  text += "<h4>Life in Pictures:</h4>";
-  text += "<div class='owl-carousel'>";
-  text += "<div class='item-wrap'><div class='item' style='overflow:hidden; height:220px;'><a rel='prettyPhoto' href='/images/jindo.jpg' target='_blank'><img src='/images/jindo.jpg' style='margin-top:-20px;'></a></div></div>";
-  text += "<div class='item-wrap'><div class='item' style='overflow:hidden; height:220px;'><a rel='prettyPhoto' href='/images/minnow.jpg' target='_blank'><img src='/images/minnow.jpg' style='margin-top:-60px;'></a></div></div>";
-  text += "<div class='item-wrap'><div class='item' style='overflow:hidden; height:220px;'><a rel='prettyPhoto' href='/images/bike.jpg' target='_blank'><img src='/images/bike.jpg' style='margin-top:-20px;'></a></div></div>";
-  text += "</div>";
   text += "</div>";
   setActiveNav('about');
   $('#body-content').html(text);
@@ -154,7 +142,6 @@ function displayExperience() {
   var text = "";
   text += "<div id='experience' style='display:none;'>";
   text += "<h2><i class='fa fa-pencil push-right' style='font-size:30px;'></i>Experience</h2>";
-  text += "<p>I have a strong background in software and web development, with several projects spanning from full-scale Node.js web applications to analytical data simulations.</p>";
 
   text += "<div id='tech-skills' class='highlight-green'>"
   text += "<h3 id='tech-skills-header'>Technical Skills</h3>";
@@ -167,11 +154,10 @@ function displayExperience() {
   text += "<p><b>Data Analytics:</b> R, Pandas, MapReduce, Matlab, Spark, Caffe, UNIX command line (grep, find, cut, etc)</p>";
   text += "</div>"
 
-
   text += "<h3>Industry Experience</h3>";
   text += "<div class='row'>";
 
-  text += "   <div class='col-md-4'>";
+  text += "   <div class='col-md-6'>";
   text += "     <div class='grid-item'>";
   text += "     <h4>LinkedIn</h4>";
   text += "     <h6>Summer 2015</h6>";
@@ -180,7 +166,7 @@ function displayExperience() {
   text += "     </div>";
   text += "   </div>"
 
-  text += "   <div class='col-md-4'>"
+  text += "   <div class='col-md-6'>"
   text += "     <div class='grid-item'>";
   text += "     <h4>LogicBlox, Inc</h4>";
   text += "     <h6>September 2014 - Present</h6>";
@@ -189,7 +175,7 @@ function displayExperience() {
   text += "     </div>";
   text += "   </div>"
 
-  text += "   <div class='col-md-4'>"
+  text += "   <div class='col-md-6'>"
   text += "     <div class='grid-item'>";
   text += "     <h4>UC Berkeley</h4>";
   text += "     <h6>February 2014 - Present</h6>";
@@ -198,7 +184,7 @@ function displayExperience() {
   text += "     </div>";
   text += "   </div>";
 
-  text += "   <div class='col-md-4'>"
+  text += "   <div class='col-md-6'>"
   text += "     <div class='grid-item'>";
   text += "     <h4>AutoGrid Systems</h4>";
   text += "     <h6>May 2014 - August 2014</h6>";
@@ -207,7 +193,7 @@ function displayExperience() {
   text += "     </div>";
   text += "   </div>";
 
-  text += "   <div class='col-md-4'>"
+  text += "   <div class='col-md-6'>"
   text += "     <div class='grid-item'>";
   text += "     <h4>Microsoft</h4>";
   text += "     <h6>December 2012 - January 2013</h6>";
@@ -216,7 +202,7 @@ function displayExperience() {
   text += "     </div>";
   text += "   </div>";
 
-  text += "   <div class='col-md-4'>"
+  text += "   <div class='col-md-6'>"
   text += "     <div class='grid-item'>";
   text += "     <h4>Paw for Paw</h4>";
   text += "     <h6>July 2011 - July 2013</h6>";
@@ -398,25 +384,32 @@ function displayResearch() {
 
   text += "<h2><i class='fa fa-area-chart push-right' style='font-size:30px;'></i>Research</h2>";
 
+  text += "<div class='grid-item'>"
   text += "<h3>Spectral Clustering on MOOC Learners</h3>";
   text += "<h5>December 2014 - Present</h5>";
   text += "<p>";
   text += "TBD"
   text += "</p>";
+  text +="</div>"
 
+  text += "<div class='grid-item'>"
   text += "<h3>Graph Theory: Fully Dynamic SCC Maintenance</h3>";
   text += "<h5>September 2014 - January 2015</h5>"
   text += "<p>As part of my work for LogicBlox, a smart database startup, I'm researching the implementation of a fully dynamic maintenance algorithm for strongly connected components of a graph under edge additions and deletions. Rather than statically recompute the SCCs of a graph after every small change, I'm aiming for an optimized, cutting-edge algorithm based off academic work in relevant areas, such as strong connectivity, point analysis, etc. There currently (as of the time of this writing) is no fully dynamic algorithm that can maintain strong components in sublinear time, but the goal is to combine the optimizations of subtle but similar problems and apply them to this open-ended problem.</p>";
   text += "<p>See my work on <a href='http://www.github.com/kk415kk/dynamic-scc-algorithm' target='_blank'>Github</a>.</p>";
+  text += "</div>";
 
+  text += "<div class='grid-item'>"
   text += "<h3>fMRI Vision Classification</h3>";
   text += "<h5>October 2014 - December 2014</h5>"
   text += "<p>Data science is a passion and interest of mine that I've only dabbled a little in in the past. To change that, I've begun working on exploring some BOLD response data (brain activation data) from the Gallant Labs to try to draw conclusions about a subject's brain activity in various ROI based on a stimulus image that the subject is viewing. Data exploration, data wrangling, and feature extractions were all part of the process of developing a good model. My work has yielded significant results with the binary classification models of determining which ROI would be most activated based on various statistics extracted from a Gabor filter bank applied on the stimulus image.";
   text += "<br><br>See my results below:";
-  text += "<br>- <a href='/files/machine_learning_fmri_poster.pdf' target='_blank'>BIDS Poster</a>"
-  text += "<br>- <a href='/files/machine_learning_fmri_report.pdf' target='_blank'>BIDS Report</a>"
+  text += "<br><a href='/files/machine_learning_fmri_poster.pdf' target='_blank'>BIDS Poster</a>"
+  text += "<br><a href='/files/machine_learning_fmri_report.pdf' target='_blank'>BIDS Report</a>"
   text += "</p>";
+  text += "</div>";
 
+  text += "<div class='grid-item'>"
   text += "<h3>MOOC Analytics: Data Driven Education</h3>"
   text += "<h5>February 2014 - Present</h5>"
   text += "<p>My research involves working with large data dumps, organizing and parsing through the JSON/XML data to generate clean, queryable data and then provide a platform for which analytics and visualizations on these datasets can be shared.</p>";
@@ -434,6 +427,8 @@ function displayResearch() {
   text += "<div class='item-wrap'><div class='item'><a rel='prettyPhoto' href='/images/moocrp_2.png' target='_blank'><img src='/images/moocrp_2.png' height=220></a></div></div>";
   text += "<div class='item-wrap'><div class='item'><a rel='prettyPhoto' href='/images/moocrp_4.png' target='_blank'><img src='/images/moocrp_4.png' height=220></a></div></div>";
   text += "</div>";
+  text += "</div>";
+
   text += "</div>";
 
   setActiveNav('research');

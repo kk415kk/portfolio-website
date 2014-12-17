@@ -2,6 +2,19 @@ body {
   font-family: 'Raleway', sans-serif;
   background-color: #42bdc2;
   color: white;
+  background-image: url("/images/bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+footer {
+  width: 100%;
+  border-radius: 5px;
+  padding: 5px;
+  color: #777;
+  background-color: white;
+  opacity: 0.85;
+  filter: alpha(opacity=85); /* For IE8 and earlier */
 }
 
 h1 {
@@ -205,15 +218,20 @@ img.logo {
 .grid-item {
   padding: 10px;
   padding-left: 20px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   background-color: teal;
   border-radius: 5px;
+  border: 5px white solid;
   transition: all 0.5s ease;
 }
 
 .grid-item:hover {
   cursor: pointer;
   background-color: #079191;
+}
+
+.grid-item a {
+  color: #4e5361;
 }
 
 #hidden,
