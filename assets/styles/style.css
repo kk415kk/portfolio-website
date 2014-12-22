@@ -15,6 +15,7 @@ footer {
   background-color: white;
   opacity: 0.85;
   filter: alpha(opacity=85); /* For IE8 and earlier */
+  margin-top: -30px;
 }
 
 h1 {
@@ -54,8 +55,8 @@ a:hover {
 
 /* Transparency for the background */
 .transparent {
-  opacity: 0.7;
-  filter: alpha(opacity=70); /* For IE8 and earlier */
+  opacity: 0.8;
+  filter: alpha(opacity=80); /* For IE8 and earlier */
 }
 
 .push-down-sm {
@@ -98,7 +99,7 @@ nav .active a {
 
 /* Modals */
 .modal {
-  color: #5cb85c;
+  color: teal;
 }
 
 .modal p {
@@ -107,7 +108,8 @@ nav .active a {
 
 /* Header */
 a#personal-name {
-  color: #5eb95e;
+  /*color: #5eb95e;*/
+  color: teal;
   font-size: 45px;
   padding-left: 20px;
   padding-right: 20px;
@@ -125,6 +127,10 @@ a#personal-name:hover {
   opacity: 1.0;
   filter: alpha(opacity=100); /* For IE8 and earlier */
   text-decoration: none;
+}
+
+.btn-success.disabled, .btn-success[disabled], fieldset[disabled] .btn-success, .btn-success.disabled:hover, .btn-success[disabled]:hover, fieldset[disabled] .btn-success:hover, .btn-success.disabled:focus, .btn-success[disabled]:focus, fieldset[disabled] .btn-success:focus, .btn-success.disabled.focus, .btn-success[disabled].focus, fieldset[disabled] .btn-success.focus, .btn-success.disabled:active, .btn-success[disabled]:active, fieldset[disabled] .btn-success:active, .btn-success.disabled.active, .btn-success[disabled].active, fieldset[disabled] .btn-success.active {
+  background-color: teal;
 }
 
 /* Buttons */
@@ -191,7 +197,7 @@ img.logo {
   height: 50px;
   padding: 5px;
   background-color: white;
-  border: 1px solid #;
+  border: 1px solid transparent;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
   border-radius: 2px;
@@ -210,9 +216,14 @@ img.logo {
 
 .highlight-green {
   padding: 10px 30px;
+  padding-top: 20px;
   background-color: #5eb95e;
   border-radius: 10px;
   border: 5px white solid;
+}
+
+.grid-item p {
+  margin-top: 10px;
 }
 
 .grid-item {

@@ -9,6 +9,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><a id="nav-about">About</a></li>
+        <li><a id="nav-skills">Skills</a></li>
         <li><a id="nav-experience">Experience</a></li>
         <li><a id="nav-projects">Projects</a></li>
         <li><a id="nav-research">Research</a></li>
@@ -90,6 +91,7 @@ $(document).ready(function () {
   // Navigation click handlers
   $('#personal-name').click(displayAboutMe);
   $('#nav-about').click(displayAboutMe);
+  $('#nav-skills').click(displaySkills);
   $('#nav-experience').click(displayExperience);
   $('#nav-projects').click(displayProjects);
   $('#nav-research').click(displayResearch);
@@ -105,9 +107,8 @@ function setActiveNav(element) {
 function displayAboutMe() {
   var text = "";
   text += "<div id='about' style='display:none;''>";
-  text += "<div class='highlight-green'>";
   text += "<h2><i class='fa fa-rocket push-right' style='font-size:30px;'></i>About Me</h2>"
-  text += "<hr>";
+  text += "<div class='grid-item'>";
   text += "<p>I'm a third year undergraduate EECS major at University of California, Berkeley. I was born in San Jose, CA and spent most of my life in the Silicon Valley. Upon starting college, I've learned to truly appreciate the little quircks of CS theory and began my deep dive into computer science. I love tackling thought-provoking and challenging projects - I've worked on several on my own and in teams. I've found my intersts piqued by certain CS niches, including algorithms development and optimization, data analytics and machine learning, genomics, and security.</p>";
   text += "<p>Outside of work, I love indulging in and playing music (violin, piano, and guitar), as well as spending time in the great outdoors. I've played soccer for over 14 years, since I was 5, and I find running, biking, and volleyball to be enjoyable pastimes. I'm a huge fan of dogs (most animals, really), especially Siberian huskies. Recently, I've started dabbling in aquariums - not just fish but other aquatic creatures too. Keeping up with <a href='http://www.nytimes.com' target='_blank'>the cogs of the world</a> is a must for me, as well as exploring its nooks and crannies.</p>"
   text += "</div>"
@@ -138,14 +139,11 @@ function displayAboutMe() {
   });
 }
 
-function displayExperience() {
+function displaySkills() {
   var text = "";
-  text += "<div id='experience' style='display:none;'>";
-  text += "<h2><i class='fa fa-pencil push-right' style='font-size:30px;'></i>Experience</h2>";
-
-  text += "<div id='tech-skills' class='highlight-green'>"
-  text += "<h3 id='tech-skills-header'>Technical Skills</h3>";
-  text += "<hr>";
+  text += "<div id='skills' style='display:none;'>";
+  text += "<h2><i class='fa fa-pencil push-right' style='font-size:30px;'></i>Technical Skills</h2>";
+  text += "<div id='tech-skills' class='grid-item'>"
   text += "<p>I develop primarily in an UNIX environment, with a strong grasp of Python and Java as my go-to languages. I feel very comfortable using JavaScript and SQL, as well as HTML/CSS during web development.</p>";
   text += "<p>My proficiency in various technologies varies from time to time depending on what I'm working on, but in general, I'm a strong learner, so I can pick up (or remind myself of) technologies relatively easily. I've had past experience with all of the following:</p>";
   text += "<p><b>Programming Languages:</b> Java, Python, JavaScript, Ruby, SQL, C, C++, Bash, Scala, Datalog</p>"
@@ -153,10 +151,25 @@ function displayExperience() {
   text += "<p><b>Frameworks/Tools:</b> Git, Mercurial, Node.js, Sails.js, Flask, Rails, Hadoop, D3.js</p>";
   text += "<p><b>Data Analytics:</b> R, Pandas, MapReduce, Matlab, Spark, Caffe, UNIX command line (grep, find, cut, etc)</p>";
   text += "</div>"
+  text += "</div>";
+  setActiveNav('skills');
+  $('#body-content').html(text);
+  $('#skills').fadeIn();
+  document.title = 'Kevin Kao - Technical Skills';
 
-  text += "<h3>Industry Experience</h3>";
+  $('.fa-pencil').on('mouseover', function() {
+    $('.fa-pencil').rotate({ animateTo: -60 });
+  });
+  $('.fa-pencil').on('mouseleave', function() {
+    $('.fa-pencil').rotate({ animateTo: -10 });
+  });
+}
+
+function displayExperience() {
+  var text = "";
+  text += "<div id='experience' style='display:none;'>";
+  text += "<h2><i class='fa fa-pencil push-right' style='font-size:30px;'></i>Experience</h2>";
   text += "<div class='row'>";
-
   text += "   <div class='col-md-6'>";
   text += "     <div class='grid-item'>";
   text += "     <h4>LinkedIn</h4>";
@@ -211,49 +224,43 @@ function displayExperience() {
   text += "     </div>";
   text += "   </div>";
   text += "</div>";
-
   text += "</div>";
   setActiveNav('experience');
   $('#body-content').html(text);
   $('#experience').fadeIn();
   document.title = 'Kevin Kao - Experience';
-
-  $('.fa-pencil').on('mouseover', function() {
-    $('.fa-pencil').rotate({ animateTo: -60 });
-  });
-  $('.fa-pencil').on('mouseleave', function() {
-    $('.fa-pencil').rotate({ animateTo: -10 });
-  });
 }
 
 function displayProjects() {
   var text = "";
   text += "<div id='projects' style='display:none;'>";
   text += "<h2><i class='fa fa-code push-right' style='font-size:30px;'></i>Projects</h2>";
-  text += "<p>Here is a sample list of projects I've worked on in the past or currently. To see my work-related projects, see <a class='no-href' onclick='displayExperience();'>Experience</a>. Some of my projects are hosted on my Github (see above) publicly - if you want to see a project of mine that isn't up, please contact me.</p>"
-  text += "<form id='live-search' action='' class='styled' method='post'>"
-  text += "<fieldset>"
-  text += "<label>Search: </label>";
-  text += "<input type='text' class='form-control' id='filter' value='' />"
-  text += "<span id='filter-count'></span>"
-  text += "</fieldset>"
-  text += "</form>"
-  text += "<br>";
-
+  text += "<p>Here is a sample list of projects I've worked on in the past or currently. To see my work-related projects, see <a class='no-href' onclick='displayExperience();'>Experience</a>. Some of my projects are hosted on my Github (see above) publicly - if you want to see a project of mine that isn't up, please contact me.</p>";
+  text += "<br>"
+  text += "<table id='projects-table'>"
+  text += "<thead><tr><td>Projects</td></tr></thead>"
+  text += "<tbody>"
+  text += "<tr><td>"
   text += "<div class='grid-item'>";
   text += "<div class='project'>";
   text += "<h4>scribble.ly</h4>";
+  text += "<h6>September 2014 - December 2014</h6>";
   text += "<p>A single-page application that served as an URL shortener.</p>";
   text += "</div>";
   text += "</div>";
+  text += "</td></tr>"
 
+  text += "<tr><td>"
   text += "<div class='grid-item'>";
   text += "<div class='project'>";
   text += "<h4>Brain Imaging Analytics</h4>";
+  text += "<h6>September 2014 - December 2014</h6>";
   text += "<p>TBD</p>";
   text += "</div>";
   text += "</div>"
+  text += "</tr></td>"
 
+  text += "<tr><td>"
   text += "<div class='grid-item'>";
   text += "<div class='project'>";
   text += "<h4>Node.js CAS Authentication Module</h4>";
@@ -264,7 +271,9 @@ function displayProjects() {
   text += "</p>";
   text += "</div>";
   text += "</div>";
+  text += "</tr></td>"
 
+  text += "<tr><td>"
   text += "<div class='grid-item'>";
   text += "<div class='project'>";
   text += "<h4>SimpleDB Relational Database</h4>";
@@ -279,7 +288,9 @@ function displayProjects() {
   text += "</p>";
   text += "</div>";
   text += "</div>";
+  text += "</tr></td>"
 
+  text += "<tr><td>"
   text += "<div class='grid-item'>";
   text += "<div class='project'>";
   text += "<h4>Web & Linux Security Penetration Testing</h4>";
@@ -292,7 +303,9 @@ function displayProjects() {
   text += "</p>";
   text += "</div>";
   text += "</div>";
+  text += "</tr></td>"
 
+  text += "<tr><td>"
   text += "<div class='grid-item'>";
   text += "<div class='project'>";
   text += "<h4>Pacman</h4>";
@@ -304,7 +317,9 @@ function displayProjects() {
   text += "</p>";
   text += "</div>";
   text += "</div>";
+  text += "</tr></td>"
 
+  text += "<tr><td>"
   text += "<div class='grid-item'>";
   text += "<div class='project'>";
   text += "<h4>Image Metadata Parser</h4>";
@@ -317,7 +332,9 @@ function displayProjects() {
   text += "</p>";
   text += "</div>"
   text += "</div>";
+  text += "</tr></td>"
 
+  text += "<tr><td>"
   text += "<div class='grid-item'>";
   text += "<div class='project'>";
   text += "<h4>Image Filter</h4>";
@@ -330,7 +347,9 @@ function displayProjects() {
   text += "</p>";
   text += "</div>";
   text += "</div>";
+  text += "</tr></td>"
 
+  text += "<tr><td>"
   text += "<div class='grid-item'>";
   text += "<div class='project'>";
   text += "<h4>Text Analysis - MapReduce</h4>";
@@ -342,12 +361,22 @@ function displayProjects() {
   text += "</p>";
   text += "</div>";
   text += "</div>";
+  text += "</tr></td>"
+  text += "</tbody></table>"
 
   text += "</div>";
   setActiveNav('projects');
   $('#body-content').html(text);
   $('#projects').fadeIn();
   document.title = 'Kevin Kao - Projects';
+
+  $(document).ready(function() {
+    $('#projects-table').dataTable({
+        "pagingType": "full_numbers",
+        "pageLength": 1,
+        "aLengthMenu": [[1, 2, 3, 5, -1], [1, 2, 3, 5, "All"]]
+    });
+  });
 
   // Live search feature for projects page
   $("#filter").keyup(function(){
@@ -382,8 +411,10 @@ function displayResearch() {
   text += "<p>[1] Zachary Pardos, Kevin Kao. “moocRP: An Open-Source Learning Analytics Platform”. December 2014. LAS 2015.</p>"
   text += "<p>[2] Kevin Kao, Ananth Sub., Valerie Liu. “Machine Learning with fMRI Brain Images.” December 2014. CS194-16 BIDS Poster Session.</p>"
 
-  text += "<h2><i class='fa fa-area-chart push-right' style='font-size:30px;'></i>Research</h2>";
-
+  text += "<h2><i class='fa fa-area-chart push-right' style='font-size:30px;'></i>Research</h2><br>";
+  text += "<table id='research-table'>"
+  text += "<thead><tr><td>Projects</td></tr></thead>"
+  text += "<tr><td>"
   text += "<div class='grid-item'>"
   text += "<h3>Spectral Clustering on MOOC Learners</h3>";
   text += "<h5>December 2014 - Present</h5>";
@@ -391,14 +422,18 @@ function displayResearch() {
   text += "TBD"
   text += "</p>";
   text +="</div>"
+  text += "</tr></td>"
 
+  text += "<tr><td>"
   text += "<div class='grid-item'>"
   text += "<h3>Graph Theory: Fully Dynamic SCC Maintenance</h3>";
   text += "<h5>September 2014 - January 2015</h5>"
   text += "<p>As part of my work for LogicBlox, a smart database startup, I'm researching the implementation of a fully dynamic maintenance algorithm for strongly connected components of a graph under edge additions and deletions. Rather than statically recompute the SCCs of a graph after every small change, I'm aiming for an optimized, cutting-edge algorithm based off academic work in relevant areas, such as strong connectivity, point analysis, etc. There currently (as of the time of this writing) is no fully dynamic algorithm that can maintain strong components in sublinear time, but the goal is to combine the optimizations of subtle but similar problems and apply them to this open-ended problem.</p>";
   text += "<p>See my work on <a href='http://www.github.com/kk415kk/dynamic-scc-algorithm' target='_blank'>Github</a>.</p>";
   text += "</div>";
+  text += "</tr></td>"
 
+  text += "<tr><td>"
   text += "<div class='grid-item'>"
   text += "<h3>fMRI Vision Classification</h3>";
   text += "<h5>October 2014 - December 2014</h5>"
@@ -408,7 +443,9 @@ function displayResearch() {
   text += "<br><a href='/files/machine_learning_fmri_report.pdf' target='_blank'>BIDS Report</a>"
   text += "</p>";
   text += "</div>";
+  text += "</tr></td>"
 
+  text += "<tr><td>"
   text += "<div class='grid-item'>"
   text += "<h3>MOOC Analytics: Data Driven Education</h3>"
   text += "<h5>February 2014 - Present</h5>"
@@ -421,13 +458,14 @@ function displayResearch() {
           "<li>Fully designed and developed a research platform to share data visualizations and analytics</li>" +
           "</ul>";
   text += "<p>Current features of my web platform include secure dataset downloads by a user permissions system, SSL, and CSRF-protection as well as data visualizations through D3.js and CAS authentication. Future goals include contributing to a C++ wrapper around Matlab for machine learning on datasets, possibly porting the code to Julia for distributed computing.</p>";
-  text += "<div class='owl-carousel'>";
-  text += "<div class='item-wrap'><div class='item'><a rel='prettyPhoto' href='/images/moocrp_1.png' target='_blank'><img src='/images/moocrp_1.png' height=220></a></div></div>";
-  text += "<div class='item-wrap'><div class='item'><a rel='prettyPhoto' href='/images/moocrp_3.png' target='_blank'><img src='/images/moocrp_3.png' height=220></a></div></div>";
-  text += "<div class='item-wrap'><div class='item'><a rel='prettyPhoto' href='/images/moocrp_2.png' target='_blank'><img src='/images/moocrp_2.png' height=220></a></div></div>";
-  text += "<div class='item-wrap'><div class='item'><a rel='prettyPhoto' href='/images/moocrp_4.png' target='_blank'><img src='/images/moocrp_4.png' height=220></a></div></div>";
+  // text += "<div class='owl-carousel'>";
+  // text += "<div class='item-wrap'><div class='item'><a rel='prettyPhoto' href='/images/moocrp_1.png' target='_blank'><img src='/images/moocrp_1.png' height=220></a></div></div>";
+  // text += "<div class='item-wrap'><div class='item'><a rel='prettyPhoto' href='/images/moocrp_3.png' target='_blank'><img src='/images/moocrp_3.png' height=220></a></div></div>";
+  // text += "<div class='item-wrap'><div class='item'><a rel='prettyPhoto' href='/images/moocrp_2.png' target='_blank'><img src='/images/moocrp_2.png' height=220></a></div></div>";
+  // text += "<div class='item-wrap'><div class='item'><a rel='prettyPhoto' href='/images/moocrp_4.png' target='_blank'><img src='/images/moocrp_4.png' height=220></a></div></div>";
+  // text += "</div>";
   text += "</div>";
-  text += "</div>";
+  text += "</tr></td>"
 
   text += "</div>";
 
@@ -447,6 +485,14 @@ function displayResearch() {
     animateIn: true,
     lazyLoad: true,
     autoplay: true
+  });
+
+  $(document).ready(function() {
+    $('#research-table').dataTable({
+        "pagingType": "full_numbers",
+        "pageLength": 1,
+        "aLengthMenu": [[1, 2, 3, 5, -1], [1, 2, 3, 5, "All"]]
+    });
   });
 }
 </script>
