@@ -249,3 +249,19 @@ img.logo {
   display: none;
 }
 
+
+@media screen and (max-width: 500px) {
+  a#personal-name {
+    display: block;
+  }
+  #header {
+    bottom: 0; left: 0; top: 0; right: 0;
+    margin: auto auto auto auto;
+    width: 300px;
+    text-align: center;
+  }
+}
+
+/*@media (max-width: 1320px) { 
+  .pull-right { clear: none; display: inline; float: left!important; }
+}*/
