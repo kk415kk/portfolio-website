@@ -101,8 +101,28 @@ nav .active a {
   color: teal;
 }
 
+.modal-header {
+  color: black;
+}
+
 .modal p {
   color: black;
+}
+
+.modal-success {
+  background-color: #449d44;
+  border-color: #398439;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.modal-failure {
+  background-color: #d9534f;
+  border-color: #d43f3a;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;  
 }
 
 /* Header */
@@ -128,8 +148,11 @@ a#personal-name:hover {
   text-decoration: none;
 }
 
+.btn-success,
+.btn-success:hover, .btn-success:focus, .btn-success.focus, .btn-success:active, .btn-success.active, .open>.dropdown-toggle.btn-success,
 .btn-success.disabled, .btn-success[disabled], fieldset[disabled] .btn-success, .btn-success.disabled:hover, .btn-success[disabled]:hover, fieldset[disabled] .btn-success:hover, .btn-success.disabled:focus, .btn-success[disabled]:focus, fieldset[disabled] .btn-success:focus, .btn-success.disabled.focus, .btn-success[disabled].focus, fieldset[disabled] .btn-success.focus, .btn-success.disabled:active, .btn-success[disabled]:active, fieldset[disabled] .btn-success:active, .btn-success.disabled.active, .btn-success[disabled].active, fieldset[disabled] .btn-success.active {
   background-color: teal;
+  border-color: #007575;
 }
 
 /* Buttons */

@@ -65,8 +65,10 @@
       </div>
 
       <div class="modal-body">
-        <p>This is under construction. In the meantime, please email me at <a class="no-href">kkao[at]berkeley.edu</a> to contact me.</p>
-        <form id='contact-form' method='POST'>
+        <div id='modal-success' class='modal-success' style='display:none;'></div>
+        <div id='modal-failure' class='modal-failure' style='display:none;'></div>
+        <p>You may also email me at <a class="no-href">kkao[at]berkeley.edu</a> to contact me. I'll do my best to respond within a few days.</p>
+        <form id='contact-form' method='POST' action='/home/contact'>
           <div class='form-group'>
             <label for='firstName'>First Name: </label>
             <input type='text' id='firstName' class='form-control' name='firstName'>
@@ -88,15 +90,40 @@
           </div>
           <div class='form-group'>
             <label for='emailMessage'>Message: </label>
-            <textarea rows="10" style='width:100%;'></textarea>
+            <textarea name='emailMessage' rows="10" style='width:100%;'></textarea>
           </div>
         </form>
       </div>
 
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <a type="submit" class="btn btn-success" value="Send" href="#" disabled><i class='fa fa-envelope push-right' style='font-size:15px;'></i>Send</a>
+        <a id='contactSubmit' type="submit" class="btn btn-success" value="Send" disabled><i class='fa fa-envelope push-right' style='font-size:15px;'></i>Send</a>
       </div>
+      <script>
+        $('#contact-form').on('input', function () {
+          var $emptyFields = $('#contact-form :input').filter(function() {
+            return $.trim(this.value) === "";
+          });
+          if (!$emptyFields.length && $('#emailAddress').val().indexOf('@') > -1) {
+            $('#contactSubmit').removeAttr("disabled");
+          }
+        })
+
+        $('#contactSubmit').click(function() {
+          $.post("/home/contact", $("#contact-form").serialize(), function(data) {
+            if (data['success'] == true) {
+              $('#modal-success').text('Successfully sent message.');
+              $('#modal-success').fadeIn();
+              $('<br>').insertAfter('#modal-success');
+            } else {
+              $('#modal-failure').text('Message was not successful. Please try again.');
+              $('#modal-failure').fadeIn();
+              $('<br>').insertAfter('#modal-failure');
+            }
+            return false;
+          })
+        })
+      </script>
     </div>
   </div>
 </div>
