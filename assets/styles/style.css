@@ -243,10 +243,6 @@ img.logo {
   border: 5px white solid;
 }
 
-.grid-item p {
-  margin-top: 10px;
-}
-
 .grid-item {
   padding: 10px;
   padding-left: 20px;
@@ -262,8 +258,27 @@ img.logo {
   background-color: #079191;
 }
 
+.grid-item p {
+  margin-top: 10px;
+}
+
 .grid-item a {
   color: #4e5361;
+}
+
+.grid-logo {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.grid-logo img {
+  margin-top: -50px;
+  max-height: 4em;
+  max-width: 4em;
+}
+
+.grid-text {
+  display: inline-block;
 }
 
 #hidden,
