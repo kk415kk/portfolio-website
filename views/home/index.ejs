@@ -111,7 +111,7 @@
         })
 
         $('#contactSubmit').click(function() {
-          $.post("/home/contact", $("#contact-form").serialize(), function(data) {
+          io.socket.post("/home/contact", $("#contact-form").serialize(), function(data, jwres) {
             if (data['success'] == true) {
               $('#modal-success').text('Successfully sent message.');
               $('#modal-success').fadeIn();

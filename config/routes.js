@@ -43,7 +43,8 @@ module.exports.routes = {
   '/logout': {
     controller: 'user',
     action: 'logout'
-  }
+  },
+
 
   /***************************************************************************
   *                                                                          *
