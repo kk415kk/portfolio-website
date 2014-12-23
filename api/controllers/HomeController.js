@@ -16,7 +16,6 @@ module.exports = {
     var mailOptions = sails.config.mailOptions;
 
     var params = req.params.all();
-
     var firstName = params['firstName'],
         lastName = params['lastName'],
         type = params['type'],
